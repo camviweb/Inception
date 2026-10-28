@@ -13,7 +13,7 @@ make
 
 ## Vocabulary
 - **container** = an isolated environment (processes) in which a program runs, sharing the host's kernel (so lighter than a virtual machine)  
-- **image** = a package that includes all of the files, binaries, libraries and configurations to run a container  
+- ** (Docker) image** = a static template that contains everything necessary (files, binaries, libraries, configuration) to launch a container  
 
 ## Resources
 - [Docker doc on container](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/)  
