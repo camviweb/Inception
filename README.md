@@ -1,8 +1,8 @@
 *This project has been created as part of the 42 curriculum by canguyen.*  
 
 ## Description
-A small infrastructure composed of different services, running inside a virtual machine.  
-The goal is to use Docker to configure, build and connect these services together.   
+A small infrastructure composed of 3 services (NGINX, WordPress and MariaDB), running inside a virtual machine.  
+The goal is to use Docker to build, configure and connect these services together.   
 
 ## Instructions
 
