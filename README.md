@@ -2,7 +2,7 @@
 
 ## Description
 A small infrastructure composed of different services, running inside a virtual machine.  
-The goal is to use Docker to build, configure and connect these services together.   
+The goal is to use Docker to configure, build and connect these services together.   
 
 ## Instructions
 
