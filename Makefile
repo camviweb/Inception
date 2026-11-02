@@ -1,3 +1,7 @@
 all:
+	docker compose -f srcs/docker-compose.yml up --build
 
-.PHONY: all
+down:
+	docker compose -f srcs/docker-compose.yml down
+
+.PHONY: all down
