@@ -25,5 +25,5 @@ A Virtual Machine simulates a whole computer, using its own kernel : it's isolat
 - [Docker doc on image](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/)  
 - [Official image of Nginx](https://hub.docker.com/_/nginx)  
 - [Official image of MariaDB](https://hub.docker.com/_/mariadb)  
-- [Inception tutorial](https://inception.cluzet.fr/) : restart at Docker > EXPOSE  
+- [Inception tutorial](https://inception.cluzet.fr/) : restart at Docker > Docker Compose 
 - AI was used for technical explanations  
