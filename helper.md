@@ -12,6 +12,12 @@ Page to read : 8, 9, 10, 11, 12, 13, 15, 16, 17
 - [x] Create the readme and helper
 - [x] Create a virtual machine
 - [x] Read the project page
+- [x] Set up MariaDB image
+- [ ] Set up Nginx image
+- [ ] Set up WordPress image
+- [ ] Build and run with Docker Compose
+- [ ] MariaDB volume
+- [ ] WordPress volume
 - [ ] Earn 1st point
 - [ ] Earn 2nd point
 - [ ] Earn 3rd point
