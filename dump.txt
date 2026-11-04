@@ -12,6 +12,7 @@ docker run --rm --name <container_name> <image_name>
 - create and start a container from <image_name>
 - -d to run in the background
 - --rm to delete the container when it stops
+- --env-file <env_file_name>
 
 docker exec -it <container_name> <command>
 - execute a new command in <container_name>

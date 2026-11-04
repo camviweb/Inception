@@ -18,8 +18,8 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '$(< /run/secrets/db_root_password)'
 CREATE DATABASE IF NOT EXISTS \`${MYSQL_DATABASE}\`;
 CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '$(< /run/secrets/db_password)';
 GRANT ALL PRIVILEGES ON \`${MYSQL_DATABASE}\`.* TO '${MYSQL_USER}'@'%';
-FLUSH PRIVILEGES;
+# FLUSH PRIVILEGES;
 SQL
 fi
 
-exec mariadbd --user=mysql
+# exec mariadbd --user=mysql
