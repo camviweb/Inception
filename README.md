@@ -13,6 +13,9 @@ make
 
 ## Project description
 
+### Main design choices
+- One service per container, each one running a single process in the foreground as PID 1 (e.g. `nginx -g "daemon off"`). A container only lives as long as its main process, so the service must not be daemonize.
+
 ### Virtual Machine vs Docker
 A Virtual Machine simulates a whole computer, using its own kernel : it's isolated but heavy and slow to start whereas a Docker container only isolates a program and uses the kernel of its host : it's lighter and start quickly.
 

@@ -21,6 +21,3 @@ docker exec -it <container_name> <command>
 - -it to get an interactive shell
 
 docker exec -it test mariadb
-
-docker image prune
-docker rmi <image_name>
