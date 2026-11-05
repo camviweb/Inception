@@ -1,12 +1,14 @@
-docker build -t <image_name> .
--  build an image from a Dockerfile
-- -t to give a name to the image
-- . : the context, the folder
-
+## Docker installation
 sudo apt install docker.io  
 sudo apt install docker-compose  
 sudo systemctl enable --now docker  
 sudo usermod -aG docker $USER  
+
+## Docker commands
+docker build -t <image_name> .
+-  build an image from a Dockerfile
+- -t to give a name to the image
+- . : the context, the folder with the Dockerfile
 
 docker run --rm --name <container_name> <image_name>
 - create and start a container from <image_name>
