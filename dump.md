@@ -9,6 +9,7 @@ docker build -t <image_name> .
 -  build an image from a Dockerfile
 - -t to give a name to the image
 - . : the context, the folder with the Dockerfile
+- --build-arg <ARG_name>=<arg_value>
 
 docker run --rm --name <container_name> <image_name>
 - create and start a container from <image_name>
