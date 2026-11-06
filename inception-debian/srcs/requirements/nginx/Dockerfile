@@ -1,10 +1,10 @@
-FROM debian:bookworm
+# FROM debian:bookworm
 
 ARG DOMAIN_NAME
 
-RUN apt-get update \
+# RUN apt-get update \
     && apt-get install -y --no-install-recommends nginx openssl \
-    && rm -rf /var/lib/apt/lists/*
+    # && rm -rf /var/lib/apt/lists/*
 
 RUN openssl req -x509 -nodes -newkey rsa:2048 -days 365 \
         -keyout /etc/ssl/private/inception.key \

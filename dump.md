@@ -15,6 +15,7 @@ docker run --rm --name <container_name> <image_name>
 - -d to run in the background
 - --rm to delete the container when it stops
 - --env-file <env_file_name>
+- -p <host_port>:<container_port> to expose a port
 
 docker exec -it <container_name> <command>
 - execute a new command in <container_name>
