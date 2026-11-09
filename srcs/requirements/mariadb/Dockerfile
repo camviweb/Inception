@@ -10,4 +10,4 @@ RUN chmod +x /usr/local/bin/init.sh
 
 EXPOSE 3306
 
-ENTRYPOINT ["/usr/local/bin/init.sh"]
+ENTRYPOINT ["init.sh"]

@@ -6,6 +6,7 @@ Page to read : 8, 9, 10, 11, 12, 13, 15, 16, 17
 ## Liste de choses à rechercher plus tard/pas prioritaire
 - infos w/ ls -alR
 - details on Guest Additions (copy-paste between host and virtual machines and window management)
+- nginx: -addext
 
 ## Small steps toward validation
 
