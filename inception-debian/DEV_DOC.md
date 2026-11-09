@@ -1,4 +1,4 @@
-# Developer documentation
+<!-- # Developer documentation -->
 
 ## Set up from scratch
 

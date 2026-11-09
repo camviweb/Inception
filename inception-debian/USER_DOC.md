@@ -1,4 +1,4 @@
-# User documentation
+<!-- # User documentation -->
 
 ## What the stack provides
 
