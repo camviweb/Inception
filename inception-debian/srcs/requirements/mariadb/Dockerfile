@@ -2,7 +2,7 @@
 
 # RUN apt-get update \
     && apt-get install -y --no-install-recommends mariadb-server \
-    && rm -rf /var/lib/apt/lists/*
+    # && rm -rf /var/lib/apt/lists/*
 
 RUN rm -rf /var/lib/mysql \
     && mkdir -p /var/lib/mysql /run/mysqld \
