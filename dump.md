@@ -24,5 +24,20 @@ docker exec -it <container_name> <command>
 
 docker exec -it test mariadb
 
-## NGINX
+## Nginx
 nginx -t
+
+## Docker Compose
+docker compose config
+- checks the docker-compose.yml file
+
+docker compose ps -a
+- lists containers of the current compose project
+
+## Docker network
+docker network ls
+
+docker network inspect <network_name>
+
+docker network rm <network_name>
+- for clean-up

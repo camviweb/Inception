@@ -18,10 +18,11 @@ Page to read : 8, 9, 10, 11, 12, 13, 15, 16, 17
 - [x] Set up MariaDB image
 - [x] Set up Nginx image
 - [x] Set up WordPress image
+- [x] Build and run with Docker Compose
 - [ ] Configure WordPress (requires MariaDB)
-- [ ] Build and run with Docker Compose
 - [ ] MariaDB volume
 - [ ] WordPress volume
+- [ ] Secrets
 - [ ] Earn 1st point
 - [ ] Earn 2nd point
 - [ ] Earn 3rd point

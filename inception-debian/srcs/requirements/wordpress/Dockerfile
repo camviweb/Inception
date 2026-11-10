@@ -24,7 +24,7 @@
 # RUN wp core download --path=/usr/src/wordpress --version="${WP_VERSION}" --allow-root \
     # && chown -R www-data:www-data /usr/src/wordpress
 
-RUN mkdir -p /run/php \
+# RUN mkdir -p /run/php \
     && sed -i 's|^error_log = .*|error_log = /proc/self/fd/2|' /etc/php/8.2/fpm/php-fpm.conf
 
 # COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
