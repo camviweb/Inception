@@ -7,7 +7,8 @@ Page to read : 8, 9, 10, 11, 12, 13, 15, 16, 17
 - infos w/ ls -alR
 - details on Guest Additions (copy-paste between host and virtual machines and window management)
 - nginx: -addext
-- wordpress: apt-get install php8.2-curl
+- wordpress dockerfile: apt-get install php8.2-curl
+- php-fpm conf: clear_env = no
 
 ## Small steps toward validation
 
@@ -16,7 +17,8 @@ Page to read : 8, 9, 10, 11, 12, 13, 15, 16, 17
 - [x] Read the project page
 - [x] Set up MariaDB image
 - [x] Set up Nginx image
-- [ ] Set up WordPress image
+- [x] Set up WordPress image
+- [ ] Configure WordPress (requires MariaDB)
 - [ ] Build and run with Docker Compose
 - [ ] MariaDB volume
 - [ ] WordPress volume
