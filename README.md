@@ -16,8 +16,12 @@ make
 ### Main design choices
 - One service per container, each one running a single process in the foreground as PID 1 (e.g. `nginx -g "daemon off"`). A container only lives as long as its main process, so the service must not be daemonize.
 
-### Virtual Machine vs Docker
+### Virtual Machines vs Docker
 A Virtual Machine simulates a whole computer, using its own kernel : it's isolated but heavy and slow to start whereas a Docker container only isolates a program and uses the kernel of its host : it's lighter and start quickly.
+
+### Docker Network vs Host Network
+With `network_mode: host` in a service, a container shares the host's network stack: every port it opens is open on the host, and containers can't reach each other. 
+A docker (bridge) network gives each container its own address and DNS name (`mariadb`, `wordpress`, `nginx`). Only ports listed under `ports:` reach the host (here 443 on nginx).
 
 ## Vocabulary
 - **(Docker) container** = a running instance of an image, one or more isolated processes in which a program runs, they operate within their own user space (file system, libraries, dependencies) while sharing the host machine's kernel (so lighter than a virtual machine)  

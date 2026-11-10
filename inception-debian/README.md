@@ -1,8 +1,8 @@
 <!-- *This project has been created as part of the 42 curriculum by login.* -->
 
-# Inception (Debian)
+<!-- # Inception (Debian) -->
 
-## Description
+<!-- ## Description -->
 
 Inception builds a small web stack with Docker Compose inside a virtual machine. Three containers, each built from a Dockerfile in this repository on top of `debian:bookworm`:
 
@@ -39,7 +39,7 @@ make
 
 [USER_DOC.md](USER_DOC.md) covers day-to-day use. [DEV_DOC.md](DEV_DOC.md) covers setup from scratch and internals.
 
-## Project description
+<!-- ## Project description -->
 
 ### How Docker is used here
 
@@ -77,7 +77,7 @@ Each container runs one process as PID 1. The entrypoint scripts do their one-ti
 
 The `www-data` row matters more than it looks. nginx and php-fpm share the WordPress volume, and on Debian both run as uid 33, so file ownership lines up without any extra work. On Alpine, nginx runs as `nginx` and php-fpm as `nobody`, and you have to pick one.
 
-### Virtual machines vs Docker
+<!-- ### Virtual machines vs Docker -->
 
 A VM emulates hardware and boots a full guest kernel. A container is a group of ordinary processes on the host kernel, isolated with namespaces and limited with cgroups. Containers start in a second and share the host's memory, but they give weaker isolation, and every container must run on the host's kernel. This project uses both: the VM gives each student the same Linux host, and Docker splits the services inside it.
 
@@ -85,9 +85,9 @@ A VM emulates hardware and boots a full guest kernel. A container is a group of 
 
 Environment variables are visible in `docker inspect`, in `/proc/<pid>/environ`, and in every child process. Compose secrets are files mounted at `/run/secrets/<name>` inside only the containers that list them, and they never show up in `docker inspect`. Here `srcs/.env` holds non-sensitive settings (domain, database name, usernames) and `secrets/*.txt` holds the four passwords. Both paths are in `.gitignore`.
 
-### Docker network vs host network
+<!-- ### Docker network vs host network -->
 
-With `network_mode: host` a container shares the host's network stack: every port it opens is open on the host, and containers cannot reach each other by name. The `inception` bridge network gives each container its own address and DNS name (`mariadb`, `wordpress`, `nginx`). Only ports listed under `ports:` reach the host, and in this stack that is 443 on nginx.
+<!-- With `network_mode: host` a container shares the host's network stack: every port it opens is open on the host, and containers cannot reach each other by name. The `inception` bridge network gives each container its own address and DNS name (`mariadb`, `wordpress`, `nginx`). Only ports listed under `ports:` reach the host, and in this stack that is 443 on nginx. -->
 
 ### Docker volumes vs bind mounts
 
