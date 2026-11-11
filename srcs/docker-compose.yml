@@ -5,6 +5,8 @@ services:
     build: requirements/mariadb
     image: mariadb
     env_file: .env
+    volumes:
+      - mariadb:/var/lib/mysql
     networks:
       - inception
     restart: on-failure
@@ -13,6 +15,8 @@ services:
     build: requirements/wordpress
     image: wordpress
     env_file: .env
+    volumes:
+      - wordpress:/var/www/html
     networks:
       - inception
     depends_on:
@@ -25,6 +29,8 @@ services:
       args: 
         DOMAIN_NAME: ${DOMAIN_NAME}
     image: nginx
+    volumes:
+      - wordpress:/var/www/html
     networks:
       - inception
     depends_on:
@@ -32,6 +38,10 @@ services:
     ports:
       - "443:443"
     restart: on-failure
+
+volumes:
+  mariadb:
+  wordpress:
 
 networks:
   inception:
