@@ -1,13 +1,12 @@
 # Inception
 
 Version: 5.3  
-Page to read : 8, 9, 10, 11, 12, 13, 15, 16, 17
+Page to read : 9, 10, 11, 12, 13, 15, 16, 17
 
 ## Liste de choses à rechercher plus tard/pas prioritaire
 - infos w/ ls -alR, chown, chmod +x
 - details on Guest Additions (copy-paste between host and virtual machines and window management)
 - nginx: -addext
-- wordpress dockerfile: apt-get install php8.2-curl
 - php-fpm conf: clear_env = no
 
 ## Small steps toward validation
@@ -20,8 +19,8 @@ Page to read : 8, 9, 10, 11, 12, 13, 15, 16, 17
 - [x] Set up WordPress image
 - [x] Build and run with Docker Compose
 - [x] Configure WordPress (requires MariaDB)
-- [ ] MariaDB volume
-- [ ] WordPress volume
+- [x] MariaDB volume
+- [x] WordPress volume
 - [ ] Secrets
 - [ ] Earn 1st point
 - [ ] Earn 2nd point

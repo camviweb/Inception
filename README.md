@@ -23,6 +23,11 @@ A Virtual Machine simulates a whole computer, using its own kernel : it's isolat
 With `network_mode: host` in a service, the container shares the host's network stack: every port it opens is open on the host, and containers can't reach each other.  
 A docker (bridge) network gives each container its own address and DNS name (`mariadb`, `wordpress`, `nginx`). Only ports listed under `ports:` reach the host (here 443 on nginx).
 
+### Docker Volumes vs Bind Mounts
+Both give a container **persistent storage** that outlives it by mounting a directory from outside the container into its filesystem.  
+A bind mount mounts an existing host directory, referenced by its absolute path, into the container. The directory belongs to the host: Docker does not track or clean it up.  
+A Docker (named) volume is a storage object created and tracked by Docker (`docker volume ls`). It is referenced by name only and Docker can decide where its data lives on the host (by default `/var/lib/docker/volumes`).  
+
 ## Vocabulary
 - **(Docker) container** = a running instance of an image, one or more isolated processes in which a program runs, they operate within their own user space (file system, libraries, dependencies) while sharing the host machine's kernel (so lighter than a virtual machine)  
 - **(Docker) image** = a static template that contains everything necessary (files, binaries, libraries, configuration) to launch a container  

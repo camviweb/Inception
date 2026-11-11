@@ -1,7 +1,18 @@
-all:
-	docker compose -f srcs/docker-compose.yml up --build
+COMPOSE	= docker compose -f srcs/docker-compose.yml
+
+include srcs/.env
+export
+
+all: up
+
+up:
+	mkdir -p $(DATA_PATH)/mariadb $(DATA_PATH)/wordpress
+	$(COMPOSE) up --build
 
 down:
-	docker compose -f srcs/docker-compose.yml down
+	$(COMPOSE) down
 
-.PHONY: all down
+fclean:
+	$(COMPOSE) down -v
+
+.PHONY: all up down

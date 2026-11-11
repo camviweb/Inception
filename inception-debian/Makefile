@@ -1,18 +1,18 @@
-COMPOSE = docker compose -f srcs/docker-compose.yml
+# COMPOSE = docker compose -f srcs/docker-compose.yml
 SECRETS = $(addprefix secrets/,db_root_password.txt db_password.txt wp_admin_password.txt wp_user_password.txt)
 
--include srcs/.env
-export DATA_PATH
+# -include srcs/.env
+# export DATA_PATH
 
-all: up
+# all: up
 
 up: srcs/.env $(SECRETS)
 	@test -n "$(DATA_PATH)" || (echo "DATA_PATH is not set in srcs/.env" && exit 1)
-	@mkdir -p $(DATA_PATH)/mariadb $(DATA_PATH)/wordpress
+# 	@mkdir -p $(DATA_PATH)/mariadb $(DATA_PATH)/wordpress
 	$(COMPOSE) up -d --build
 
-down:
-	$(COMPOSE) down
+# down:
+# 	$(COMPOSE) down
 
 start:
 	$(COMPOSE) start

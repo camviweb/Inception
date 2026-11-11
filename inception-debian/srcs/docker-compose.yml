@@ -58,17 +58,17 @@
 
 # volumes:
   # mariadb:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ${DATA_PATH}/mariadb
+    # driver: local
+    # driver_opts:
+      # type: none
+      # o: bind
+      # device: ${DATA_PATH}/mariadb
   # wordpress:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ${DATA_PATH}/wordpress
+    # driver: local
+    # driver_opts:
+      # type: none
+      # o: bind
+      # device: ${DATA_PATH}/wordpress
 
 # networks:
   # inception:

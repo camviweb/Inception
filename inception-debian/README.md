@@ -89,7 +89,7 @@ Environment variables are visible in `docker inspect`, in `/proc/<pid>/environ`,
 
 <!-- With `network_mode: host` a container shares the host's network stack: every port it opens is open on the host, and containers cannot reach each other by name. The `inception` bridge network gives each container its own address and DNS name (`mariadb`, `wordpress`, `nginx`). Only ports listed under `ports:` reach the host, and in this stack that is 443 on nginx. -->
 
-### Docker volumes vs bind mounts
+<!-- ### Docker volumes vs bind mounts -->
 
 A bind mount maps a host path straight into a container, and Docker does not manage it. A named volume is an object Docker creates and tracks (`docker volume ls`, `docker volume inspect`), and its name is all the compose file needs to reference. The subject wants named volumes whose data lives in `/home/login/data`, so both volumes use the `local` driver with `type: none, o: bind, device: ...`. Docker manages them as volumes and stores their content at the path we chose.
 
