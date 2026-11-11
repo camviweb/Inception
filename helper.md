@@ -4,7 +4,7 @@ Version: 5.3
 Page to read : 8, 9, 10, 11, 12, 13, 15, 16, 17
 
 ## Liste de choses à rechercher plus tard/pas prioritaire
-- infos w/ ls -alR
+- infos w/ ls -alR, chown, chmod +x
 - details on Guest Additions (copy-paste between host and virtual machines and window management)
 - nginx: -addext
 - wordpress dockerfile: apt-get install php8.2-curl
@@ -19,7 +19,7 @@ Page to read : 8, 9, 10, 11, 12, 13, 15, 16, 17
 - [x] Set up Nginx image
 - [x] Set up WordPress image
 - [x] Build and run with Docker Compose
-- [ ] Configure WordPress (requires MariaDB)
+- [x] Configure WordPress (requires MariaDB)
 - [ ] MariaDB volume
 - [ ] WordPress volume
 - [ ] Secrets

@@ -29,10 +29,13 @@ nginx -t
 
 ## Docker Compose
 docker compose config
-- checks the docker-compose.yml file
+- check the docker-compose.yml file
 
 docker compose ps -a
-- lists containers of the current compose project
+- list containers of the current compose project
+
+docker compose exec <service_name> <command>
+- execute <command> in the container of <service_name>
 
 ## Docker network
 docker network ls

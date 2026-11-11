@@ -5,6 +5,7 @@ ARG WP_VERSION=7.1.4
 
 RUN apt-get update \
     && apt-get install -y php8.2-fpm php8.2-cli php8.2-mysql \
+        php8.2-curl php8.2-mbstring php8.2-xml php8.2-gd \
         curl mariadb-client \
     && rm -rf /var/lib/apt/lists/*
 
@@ -15,13 +16,12 @@ RUN curl -fsSL -o /usr/local/bin/wp "https://github.com/wp-cli/wp-cli/releases/d
 
 RUN mkdir -p /run/php
 
-# To remove later
-RUN mkdir -p /var/www/html
-
 COPY conf/www.conf /etc/php/8.2/fpm/pool.d/
 
 COPY tools/init.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/init.sh
+
+WORKDIR /var/www/html
 
 EXPOSE 9000
 
