@@ -1,6 +1,6 @@
 <!-- # Developer documentation -->
 
-## Set up from scratch
+<!-- ## Set up from scratch
 
 On a fresh Debian or Ubuntu VM:
 
@@ -11,7 +11,7 @@ sudo usermod -aG docker "$USER"     # log out and back in afterwards
 echo "127.0.0.1 login.42.fr" | sudo tee -a /etc/hosts
 git clone <repo> inception && cd inception
 make
-```
+``` -->
 
 ### Configuration files
 

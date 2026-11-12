@@ -1,9 +1,3 @@
-## Docker installation
-sudo apt install docker.io  
-sudo apt install docker-compose  
-sudo systemctl enable --now docker  
-sudo usermod -aG docker $USER  
-
 ## Docker commands
 docker build -t <image_name> .
 -  build an image from a Dockerfile
@@ -36,6 +30,7 @@ docker compose ps -a
 
 docker compose exec <service_name> <command>
 - execute <command> in the container of <service_name>
+- docker compose exec <service_name> ps aux (x to include process without shell)
 
 ## Docker network
 docker network ls

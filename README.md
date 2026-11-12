@@ -20,8 +20,8 @@ make
 A Virtual Machine simulates a whole computer, using its own kernel : it's isolated but heavy and slow to start whereas a Docker container only isolates a program and uses the kernel of its host : it's lighter and start quickly.
 
 ### Docker Network vs Host Network
-With `network_mode: host` in a service, the container shares the host's network stack: every port it opens is open on the host, and containers can't reach each other.  
-A docker (bridge) network gives each container its own address and DNS name (`mariadb`, `wordpress`, `nginx`). Only ports listed under `ports:` reach the host (here 443 on nginx).
+With `network_mode: host` in a service, the container uses the host's network stack: there is no isolation, every port it opens is open on the host, and Docker's name resolution between containers is not available.  
+A docker (bridge) network gives each container its own address and DNS name (`mariadb`, `wordpress`, `nginx`). Only ports listed under `ports:` are reachable from the host (here 443 on nginx).
 
 ### Docker Volumes vs Bind Mounts
 Both give a container **persistent storage** that outlives it by mounting a directory from outside the container into its filesystem.  
