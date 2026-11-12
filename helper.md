@@ -1,7 +1,7 @@
 # Inception
 
 Version: 5.3  
-Page to read : 9, 11, 12, 13, 15, 16, 17
+Page to read : 9, 11, 13, 15, 16, 17
 
 ## Liste de choses à rechercher plus tard/pas prioritaire
 - infos w/ ls -alR, chown, chmod +x
@@ -21,14 +21,14 @@ Page to read : 9, 11, 12, 13, 15, 16, 17
 - [x] Configure WordPress (requires MariaDB)
 - [x] MariaDB volume
 - [x] WordPress volume
-- [ ] Secrets
+- [x] Secrets
 - [ ] Earn 1st point
 - [ ] Earn 2nd point
 - [ ] Earn 3rd point
 - [ ] Test VM on usb key (for defense)
 - [ ] Check with guidelines (valgrind, file names)
 - [ ] Check not new Debian stable version
-- [ ] git push and check 
+- [ ] git push and check
 - [ ] Set the project as finished
 - [ ] 1st defense
 - [ ] 2nd defense

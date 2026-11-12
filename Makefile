@@ -14,5 +14,6 @@ down:
 
 fclean:
 	$(COMPOSE) down -v
+	sudo rm -rf $(DATA_PATH)
 
 .PHONY: all up down

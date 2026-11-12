@@ -11,13 +11,13 @@ if [ ! -d "/var/lib/mysql/${MYSQL_DATABASE}" ]; then
 
     mariadb << EOF
 CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE};
-CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_USER_PASSWORD}';
+CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '$(< /run/secrets/db_user_password)';
 GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '${MYSQL_USER}'@'%';
-ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';
+ALTER USER 'root'@'localhost' IDENTIFIED BY '$(< /run/secrets/db_root_password)';
 FLUSH PRIVILEGES;
 EOF
 
-    mariadb-admin -u root -p"${MYSQL_ROOT_PASSWORD}" shutdown
+    mariadb-admin -u root -p"$(< /run/secrets/db_root_password)" shutdown
     wait $pid
 fi
 
