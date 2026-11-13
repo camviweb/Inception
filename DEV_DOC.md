@@ -137,7 +137,7 @@ docker rmi <image_name>
 ```
 
 ### Used during development
-- To build an image manually:
+- To build an image manually:  
 Option `-t` to give a name to the image  
 `.` is the context, the folder with the Dockerfile  
 Option `--build-arg <ARG_name>=<arg_value>` to give arguments at build
@@ -145,7 +145,7 @@ Option `--build-arg <ARG_name>=<arg_value>` to give arguments at build
 docker build -t <image_name> .
 ```
 
-- To spawn a container from <image_name>:
+- To spawn a container from <image_name>:  
 Option `-d` to run in the background (no logs, terminal available)  
 Option `--rm` to delete the container when it stops  
 Option `--env-file <env_file_name>` to give an environment variables file  

@@ -1,7 +1,7 @@
 # Inception
 
 Version: 5.3  
-Page to read : 11, 13, 15, 17
+Page to read : 13, 15, 17
 
 ## Liste de choses à rechercher plus tard/pas prioritaire
 - infos w/ ls -alR, chown, chmod +x
