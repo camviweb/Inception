@@ -40,13 +40,19 @@ docker --version
 docker compose version
 ```
 
-### 4. Configure the domain name
+### 4. Prerequisite 4: openssl to generate the secrets
+1. Run in a terminal:
+```bash
+sudo apt install openssl  
+```
+
+### 5. Configure the domain name
 1. Run in a terminal:
 ```bash
 echo "127.0.0.1 <login>.42.fr" | sudo tee -a /etc/hosts
 ```
 
-### 5. Clone the project
+### 6. Clone the project
 1. Make sure you have a SSH key registered for the Virtual Machine
 2. Run in a terminal, in the directory you want:
 ```bash

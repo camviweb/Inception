@@ -1,13 +1,14 @@
 # Inception
 
 Version: 5.3  
-Page to read : 9, 11, 13, 15, 16, 17
+Page to read : 11, 13, 15, 16, 17
 
 ## Liste de choses à rechercher plus tard/pas prioritaire
 - infos w/ ls -alR, chown, chmod +x
 - details on Guest Additions (copy-paste between host and virtual machines and window management)
 - nginx: -addext
 - php-fpm conf: clear_env = no
+- API keys
 
 ## Small steps toward validation
 
