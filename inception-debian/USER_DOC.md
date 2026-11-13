@@ -1,6 +1,6 @@
 <!-- # User documentation -->
 
-## What the stack provides
+<!-- ## What the stack provides -->
 
 | Service | What it does | Reachable from |
 |---|---|---|
@@ -8,7 +8,7 @@
 | WordPress | the website and its admin panel | nginx only |
 | MariaDB | the WordPress database | WordPress only |
 
-## Start and stop
+<!-- ## Start and stop -->
 
 Run these from the repository root.
 

@@ -68,42 +68,113 @@ make # or make up
 
 ## Relevant commands
 
-### To manage the containers
-```
+### Container management
+- To list containers in execution (`ps` for process status):  
+Option `-a` to see stopped containers
+```bash
 docker ps -a
 ```
-Lists containers in execution (ps for process status)  
-Option -a to see stopped containers
-
+Or in the folder of the compose project (with `docker-compose.yml` file):
+```bash
+docker compose ps -a
 ```
+
+- To run a command inside <container_name>
+Option `-it` when the command is interactive (`bash` or database client like `mariadb`) to keep stdin open and allocate a terminal
+```bash
+docker exec -it <container_name> <command>
+```
+Or in the folder of the compose project with the name of the service:
+```bash
+docker compose exec <service_name> <command>
+```
+
+- To remove all stopped containers:
+```bash
 docker container prune
 ```
-Removes all stopped containers
 
-```
+- To stop a container in execution:
+```bash
 docker stop <container_name>
 ```
-Stops a container in execution
 
-```
+- To remove a container:
+```bash
 docker rm <container_name>
 ```
-Removes a container
 
-### To manage the volumes
-
-### To manage the images
+### Volume management
+- To list volumes:
+```bash
+docker volume ls
 ```
+
+- To see the details of a volume:
+```bash
+docker volume inspect <volume_name>
+```
+
+- To remove all unused volumes:
+```bash
+docker volume prune
+``` 
+
+### Image management
+- To list images:
+```bash
 docker image ls
 ```
-Lists images
 
-```
+- To remove all dandling images:
+```bash
 docker image prune
 ```
-Removes dangling images
 
+- To remove an image:
 ```
 docker rmi <image_name>
 ```
-Removes <image_name>
+
+### Used during development
+- To build an image manually:
+Option `-t` to give a name to the image  
+`.` is the context, the folder with the Dockerfile  
+Option `--build-arg <ARG_name>=<arg_value>` to give arguments at build
+```bash
+docker build -t <image_name> .
+```
+
+- To spawn a container from <image_name>:
+Option `-d` to run in the background (no logs, terminal available)  
+Option `--rm` to delete the container when it stops  
+Option `--env-file <env_file_name>` to give an environment variables file  
+Option `-p <host_port>:<container_port>` to expose a port
+```bash
+docker run --rm --name <container_name> <image_name>
+```
+
+- To check the `docker-compose.yml` file with expansion:
+```bash
+docker compose config
+```
+
+ - To check the syntax of the Nginx conf file -> to run in the Nginx container:
+```bash
+nginx -t
+```
+
+- To check the process in execution, relevant to see PID 1 (the x is to include process without shell) -> to run in a container:
+```bash
+ps aux
+```
+
+- To list docker networks:
+```bash
+docker network ls
+```
+
+- To see the details of a network:
+```bash
+docker network inspect <network_name>
+```
