@@ -3,7 +3,7 @@
 ## Set up the environment from scratch
 
 ### 1. Prerequisite 1: a virtual machine
-1. Download the image (.iso) of Debian Trixie
+1. Download the image (.iso) of Debian 13 (Trixie)
 2. Create a new machine in VirtualBox using this image
 3. Open it
 4. Respond to the questions
@@ -46,13 +46,19 @@ docker compose version
 sudo apt install openssl  
 ```
 
-### 5. Configure the domain name
+### 5. Create the .env file
+A `srcs/.env.example` is provided and renamed by the `Makefile` to create the actual `.env` file during defense (as it should not be in the git repository).
+
+### 6. Create the secrets
+The four secret files are generated with openssl by the `Makefile`.
+
+### 7. Configure the domain name
 1. Run in a terminal:
 ```bash
 echo "127.0.0.1 <login>.42.fr" | sudo tee -a /etc/hosts
 ```
 
-### 6. Clone the project
+### 8. Clone the project
 1. Make sure you have a SSH key registered for the Virtual Machine
 2. Run in a terminal, in the directory you want:
 ```bash
@@ -61,7 +67,7 @@ cd Inception
 ```
 
 ## Build and launch the project
-1. Run:
+Run:
 ```bash
 make # or make up
 ```
@@ -126,13 +132,13 @@ docker volume prune
 docker image ls
 ```
 
-- To remove all dandling images:
+- To remove all dangling images:
 ```bash
 docker image prune
 ```
 
 - To remove an image:
-```
+```bash
 docker rmi <image_name>
 ```
 
@@ -149,7 +155,7 @@ docker build -t <image_name> .
 Option `-d` to run in the background (no logs, terminal available)  
 Option `--rm` to delete the container when it stops  
 Option `--env-file <env_file_name>` to give an environment variables file  
-Option `-p <host_port>:<container_port>` to expose a port
+Option `-p <host_port>:<container_port>` to publish and map a port
 ```bash
 docker run --rm --name <container_name> <image_name>
 ```
@@ -178,3 +184,7 @@ docker network ls
 ```bash
 docker network inspect <network_name>
 ```
+
+## Data
+The project data is the MariaDB database and the WordPress files, they both have their folder in the host: `/home/canguyen/data/mariadb` and `/home/canguyen/data/wordpress`.  
+These folders are mounted to the associated containers and they persist after a `docker compose down`. Only deleting the folders with `rm -rf` will destroy these data.
