@@ -26,9 +26,9 @@ Page to read: all read
 - [x] Earn 1st point
 - [x] Check not new Debian stable version -> 2027
 - [x] Check with guidelines (file names)
-- [ ] Test VM on usb key (for defense)
-- [ ] git push and check
-- [ ] Set the project as finished
+- [x] git push and check
+- [x] Test VM on usb key (for defense) -> download .ova
+- [x] Set the project as finished
 - [ ] 1st defense
 - [ ] Earn 2nd point
 - [ ] Earn 3rd point
