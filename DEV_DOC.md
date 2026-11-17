@@ -46,31 +46,39 @@ docker compose version
 sudo apt install openssl  
 ```
 
-### 5. Create the .env file
-A `srcs/.env.example` is provided and renamed by the `Makefile` to create the actual `.env` file during defense (as it should not be in the git repository).
-
-### 6. Create the secrets
-The four secret files are generated with openssl by the `Makefile`.
-
-### 7. Configure the domain name
-1. Run in a terminal:
+### 5. Clone the project
+1. If you don't have an SSH key registered for this Virtual Machine:  
+Run in a terminal:
 ```bash
-echo "127.0.0.1 <login>.42.fr" | sudo tee -a /etc/hosts
+ssh-keygen -t rsa
 ```
+Press enter to skip the questions  
+Add the output of `cat ~/.ssh/id_rsa.pub` to a new SSH Key on the 42 Git
 
-### 8. Clone the project
-1. Make sure you have a SSH key registered for the Virtual Machine
 2. Run in a terminal, in the directory you want:
 ```bash
 git clone <repo> Inception
 cd Inception
 ```
 
+### 6. Create the .env file
+A `srcs/.env.example` is provided and copied by the `Makefile` to create the actual `.env` file during defense (as it should not be in the git repository).
+
+### 7. Create the secrets
+The four secret files are generated automatically with openssl on first run by the `Makefile`. They are located in the `secrets/` folder.
+
+### 8. Configure the domain name
+1. Run in a terminal:
+```bash
+echo "127.0.0.1 canguyen.42.fr" | sudo tee -a /etc/hosts
+```
+
 ## Build and launch the project
-Run:
+Run in a terminal:
 ```bash
 make # or make up
 ```
+More details are provided in [USER_DOC.md](./USER_DOC.md)
 
 ## Relevant commands
 
@@ -78,9 +86,9 @@ make # or make up
 - To list containers in execution (`ps` for process status):  
 Option `-a` to see stopped containers
 ```bash
-docker ps -a
+docker ps -a # or docker container ls
 ```
-Or in the folder of the compose project (with `docker-compose.yml` file):
+Or in the folder of the compose project (with the `docker-compose.yml` file):
 ```bash
 docker compose ps -a
 ```
@@ -126,10 +134,15 @@ docker volume inspect <volume_name>
 docker volume prune
 ``` 
 
+- To remove a volume:
+```bash
+docker volume rm <volume_name>
+```
+
 ### Image management
 - To list images:
 ```bash
-docker image ls
+docker image ls # or docker images
 ```
 
 - To remove all dangling images:
@@ -170,7 +183,7 @@ docker compose config
 nginx -t
 ```
 
-- To check the process in execution, relevant to see PID 1 (the x is to include process without shell) -> to run in a container:
+- To check the process in execution, relevant to see PID 1 (the x is to include process without terminal) -> to run in a container:
 ```bash
 ps aux
 ```
@@ -186,5 +199,5 @@ docker network inspect <network_name>
 ```
 
 ## Data
-The project data is the MariaDB database and the WordPress files, they both have their folder in the host: `/home/canguyen/data/mariadb` and `/home/canguyen/data/wordpress`.  
-These folders are mounted to the associated containers and they persist after a `docker compose down`. Only deleting the folders with `rm -rf` will destroy these data.
+The project data is the MariaDB database and the WordPress files, they both have their folder on the host: `${DATA_PATH}/mariadb` and `${DATA_PATH}/wordpress` with ${DATA_PATH} being `/home/canguyen/data`.  
+These folders are mounted to the associated containers as named volumes and they persist after a `docker compose down -v`. Only deleting the folders with `rm -rf` will destroy these data.

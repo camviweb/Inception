@@ -4,7 +4,7 @@ set -e
 if [ ! -f wp-config.php ]; then
     cp -a /usr/src/wordpress/. .
 
-    until mariadb-admin ping -h mariadb -u"$MYSQL_USER" -p"$(< /run/secrets/db_user_password)" --silent; do
+    until mariadb-admin ping -h mariadb -P 3306 -u"$MYSQL_USER" -p"$(< /run/secrets/db_user_password)" --silent; do
         sleep 1
     done
 
@@ -12,7 +12,7 @@ if [ ! -f wp-config.php ]; then
         --dbname="$MYSQL_DATABASE" \
         --dbuser="$MYSQL_USER" \
         --dbpass="$(< /run/secrets/db_user_password)" \
-        --dbhost=mariadb
+        --dbhost=mariadb:3306
 
     wp core install --allow-root \
         --url="https://$DOMAIN_NAME" \

@@ -8,18 +8,30 @@
 ## Start and stop the project
 To start the project (and build it if needed) open a terminal and run:
 ```bash
-make
+make # or make up
 ```
 
-To stop the project (containers) while keeping the data, run:
+To stop the project (containers) and be able to restart them quickly, run:
+```bash
+make stop
+make start # to restart
+```
+
+To remove the project (containers, networks) while keeping the images, the volumes and the data, run:
 ```bash
 make down
 ```
 
-To erase the data (database and website), run:
+To remove the project, the images, the volumes, while keeping the data, run:
+```bash
+make clean
+```
+
+To remove everything (containers, networks, images, volumes) AND erase the data on the host (database and website), run:
 ```bash
 make fclean
 ```
+It will require the sudo password.
 
 ## Access the website and the administration panel
 1. Open a web browser (Firefox, Chrome)
@@ -32,7 +44,7 @@ If the web browser is unable to connect, check that the domain points to the loc
 Non-confidential information such as the domain name and usernames is saved as environment variables in the `srcs/.env` file and confidential information is saved as secrets (located in the `secrets` folder) with one `.txt` file per secret. Once the project is built (`make` or `make up`), editing these files would break the login.  
 To change a password, you need to run `make fclean`, edit the `.txt` file and run `make` again.
 
-## Check the services
+## Basic checks
 To check the services are running correctly, open a terminal and run:
 ```bash
 make ps
