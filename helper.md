@@ -29,8 +29,8 @@ Page to read: all read
 - [x] git push and check
 - [x] Test VM on usb key (for defense) -> download .ova
 - [x] Set the project as finished
-- [ ] 1st defense
-- [ ] Earn 2nd point
+- [x] 1st defense
+- [x] Earn 2nd point
+- [x] 2nd defense
 - [ ] Earn 3rd point
-- [ ] 2nd defense
 - [ ] 3rd defense
