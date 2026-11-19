@@ -32,5 +32,5 @@ Page to read: all read
 - [x] 1st defense
 - [x] Earn 2nd point
 - [x] 2nd defense
-- [ ] Earn 3rd point
-- [ ] 3rd defense
+- [x] Earn 3rd point
+- [x] 3rd defense
