@@ -1,4 +1,5 @@
 *This project has been created as part of the 42 curriculum by canguyen.*  
+![validation](./inception.png)
 
 ## Description
 Hosting a WordPress website on a small infrastructure of 3 Docker containers (NGINX, WordPress and MariaDB), running inside a virtual machine.  
